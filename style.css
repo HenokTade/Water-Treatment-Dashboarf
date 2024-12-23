@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    font-family: "Poppins", serif;
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    min-height:100vh;
+    background: linear-gradient(#F1FAFF,#CBE4FF);
+}
+.sidebar{
+    background:#151A2D;
+    width:270px;
+    height:calc(100vh - 32px);
+    margin:16px;
+    border-radius:16px;
+    transition: 0.4s ease;
+
+}
+/* the class created by the addEvent listener */
+.sidebar.collapsed{
+    width: 85px;
+   
+}
+
+.sidebar.collapsed .nav-link .nav-label{
+    opacity:0;
+    pointer-events: none;
+}
+
+.sidebar.navlink .nav-label{
+    transition:opacity 0.4s ease;
+}
+
+.sidebar-header{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-content:center;
+    padding:25px 20px;
+}
+.sidebar.collapsed .sidebar-header .toggler {
+    transform: translate(-4px,65px);
+}
+
+.sidebar.collapsed .sidebar-nav .primary-nav {
+    transform: translateY(65px);
+}
+
+.sidebar-header .header-logo img{
+   
+    width:46px;
+    height:46px;
+    display:block;
+    border-radius:50%;
+    object-fit:contain; 
+}
+.sidebar-header .toggler{
+    position:absolute;
+    right:20px;
+    border-radius:6px;
+    border:none;
+    color:#151A2D;
+    background: white;
+    cursor: pointer;
+    width:35px;
+    height:35px;
+    transition: 0.4s ease;
+}
+.sidebar-header .toggler span{
+    font-size: 1.75rem;
+}
+.sidebar-header .toggler:hover{
+    background: #dde4fb;
+}
+.sidebar-nav .nav-item{
+    position:relative;
+}
+.sidebar-nav .nav-tooltip{
+    background: white;
+    color:#151A2D;
+    border-radius: 8px;
+    padding: 6px 12px;
+    position: absolute;
+    top:-10px;
+    left: calc(100% + 25px);
+    opacity:0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    pointer-events: none;
+    transition:0s;
+    display:none;
+}
+.sidebar-nav .nav-item:hover .nav-tooltip{
+    pointer-events: auto;
+    opacity:1;
+    transform: translateY(50%);
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .nav-item:hover .nav-tooltip{
+    display: block;
+}
+.sidebar-nav .nav-list{
+    list-style:none;
+    display:flex;
+    padding: 0 15px;
+    flex-direction: column;
+    gap:15px;
+    transform: translateY(15px);
+    transition: 0.4s ease;
+}
+.sidebar-nav .nav-link{
+    color:#fff;
+    text-decoration: none;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 0.4s ease;
+    white-space:nowrap;
+}
+.sidebar-nav .nav-link:hover{
+    background: white;
+    color:#151A2D;
+}
+
+
